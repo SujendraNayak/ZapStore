@@ -3,9 +3,7 @@ import "../App.css"
 
 function HomePage() {
   return (
-    <div>
-      <hi>hi Zappstore</hi>
-    </div>
+<hi>hi</hi>
   )
 }
 
