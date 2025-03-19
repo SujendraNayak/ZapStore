@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa'; // Social icons
+import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa'; 
 import '../App.css';
+import QRCodeImage from '../assets/qr-code.png'; // Correct QR code path
 
 function Footer() {
   return (
@@ -52,7 +53,7 @@ function Footer() {
           <h5>Download App</h5>
           <p>Save $3 with App New User Only</p>
           <img
-            src="https://via.placeholder.com/100x30"
+            src={QRCodeImage}  
             alt="QR Code"
             className="qr-code"
           />
