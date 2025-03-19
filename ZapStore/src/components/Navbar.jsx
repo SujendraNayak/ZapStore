@@ -37,13 +37,13 @@ function Navbar() {
               <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/wishlist">Wishlist</Link>
+              <Link className="nav-link" to="/wishlist">Contact</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/cart">Cart</Link>
+              <Link className="nav-link" to="/cart">About</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">Contact</Link>
+              <Link className="nav-link" to="/contact">Sign up</Link>
             </li>
           </ul>
 
