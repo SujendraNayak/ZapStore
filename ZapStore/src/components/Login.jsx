@@ -1,54 +1,41 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import '../App.css';
+import loginImage from '../assets/loginpage_img.jpeg'; // Import the image
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    console.log('Email:', email, 'Password:', password);
-  };
-
   return (
     <div className="login-container">
+      {/* Background Image Section */}
+      <div 
+        className="login-image" 
+        style={{ backgroundImage: `url(${loginImage})` }}
+      ></div>
+      
       <div className="login-box">
-        <h2>Welcome Back!</h2>
-        <p>Sign in to continue to ZapStore</p>
+        <h2>Create an account</h2>
+        <p>Enter your details below</p>
+        
+        <div className="form-group">
+          <label>Name</label>
+          <input type="text" placeholder="Your Name" />
+        </div>
 
-        <form onSubmit={handleLogin}>
-          <div className="form-group">
-            <label>Email Address</label>
-            <input 
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
+        <div className="form-group">
+          <label>Email or Phone Number</label>
+          <input type="text" placeholder="Email or Phone Number" />
+        </div>
 
-          <div className="form-group">
-            <label>Password</label>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
+        <div className="form-group">
+          <label>Password</label>
+          <input type="password" placeholder="Password" />
+        </div>
 
-          <button type="submit" className="btn-login">Login</button>
+        <button className="btn-login">Create Account</button>
+        <button className="google-signup">Sign up with Google</button>
 
-          <div className="extra-links">
-            <Link to="/forgot-password">Forgot Password?</Link>
-            <p>
-              New to ZapStore? <Link to="/register">Create an account</Link>
-            </p>
-          </div>
-        </form>
+        <div className="extra-links">
+          <p>Already have an account? <a href="/login">Log in</a></p>
+        </div>
       </div>
     </div>
   );

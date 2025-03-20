@@ -26,7 +26,7 @@ function Footer() {
           <h5>Account</h5>
           <ul>
             <li><Link to="/login">My Account</Link></li>
-            <li><Link to="/register">Login / Register</Link></li>
+            <li><Link to="/register">Login / Sign up</Link></li>
             <li><Link to="/cart">Cart</Link></li>
             <li><Link to="/wishlist">Wishlist</Link></li>
             <li><Link to="/shop">Shop</Link></li>
