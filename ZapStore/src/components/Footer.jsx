@@ -2,14 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa'; 
 import '../App.css';
-import QRCodeImage from '../assets/qr-code.png'; // Correct QR code path
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="container">
 
-        {/* 🔹 ZapStore Info */}
         <div className="col brand">
           <h3>ZapStore</h3>
           <p>Subscribe</p>
@@ -17,7 +15,6 @@ function Footer() {
           <button className="btn btn-outline-light">Order Now</button>
         </div>
 
-        {/* 🔹 Support Info */}
         <div className="col support">
           <h5>Support</h5>
           <p>111 Bijoy Sarani, Dhaka, Bangladesh.</p>
@@ -25,7 +22,6 @@ function Footer() {
           <p>+88015-88888-9999</p>
         </div>
 
-        {/* 🔹 Account Links */}
         <div className="col account">
           <h5>Account</h5>
           <ul>
@@ -37,7 +33,6 @@ function Footer() {
           </ul>
         </div>
 
-        {/* 🔹 Quick Links */}
         <div className="col quick-links">
           <h5>Quick Link</h5>
           <ul>
@@ -48,12 +43,11 @@ function Footer() {
           </ul>
         </div>
 
-        {/* 🔹 Download App */}
         <div className="col download">
           <h5>Download App</h5>
           <p>Save $3 with App New User Only</p>
           <img
-            src={QRCodeImage}  
+            src="/assets/qr-code.png" 
             alt="QR Code"
             className="qr-code"
           />
@@ -64,10 +58,8 @@ function Footer() {
             <a href="#"><FaLinkedin /></a>
           </div>
         </div>
-
       </div>
 
-      {/* 🔹 Copyright Section */}
       <div className="copyright">
         <p>&copy; {new Date().getFullYear()} ZapStore. All Rights Reserved.</p>
       </div>

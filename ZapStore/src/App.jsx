@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Login from './components/Login';
+import Register from './components/Register';
+
 import './App.css';
 
 function App() {
@@ -13,9 +16,11 @@ function App() {
         <div className="main-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/wishlist" element={<div>Wishlist Page</div>} />
-            <Route path="/cart" element={<div>Cart Page</div>} />
-            <Route path="/contact" element={<div>Contact Page</div>} />
+            <Route path="/Contact" element={<div>Contact</div>} />
+            <Route path="/About" element={<div>About Page</div>} />
+            <Route path="/Sign up" element={<div>Signup Page</div>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </div>
         <Footer />
