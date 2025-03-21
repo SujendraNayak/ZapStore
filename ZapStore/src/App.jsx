@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 
 import './App.css';
+import Signup from './components/Signup';
 
 function App() {
   return (
@@ -18,9 +19,10 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/Contact" element={<div>Contact</div>} />
             <Route path="/About" element={<div>About Page</div>} />
-            <Route path="/sign-up" element={<Login />} />
-            <Route path="/login" element={<div>Signup Page</div>} />
+            <Route path="/sign-up" element={<Signup />} />
+            <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register />} />
+            <Route path="/cart" element= {<div>hii</div>}/>
           </Routes>
         </div>
         <Footer />
