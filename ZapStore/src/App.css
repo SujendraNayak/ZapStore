@@ -4,8 +4,8 @@
 body, html {
   margin: 0;
   padding: 0;
-  width: 100%; /* Ensures the full width */
-  box-sizing: border-box; /* Prevents overflow */
+  width: 100%;
+  box-sizing: border-box;
   overflow-x: hidden; /* Removes unwanted horizontal scroll */
 }
 
@@ -137,135 +137,5 @@ body, html {
 
   .qr-code {
     margin: 0 auto;
-  }
-}
-
-/* ============================= */
-/* Login Page Design with Image */
-/* ============================= */
-
-.login-container {
-  display: flex;
-  height: 100vh;
-  background-color:white;
-  padding :  10px; /* Ensures space on all sides */
-  box-sizing: content-box;
-  margin-top: 7%;
-}
-
-.login-image {
-  flex: 1;
-  background: url('../assets/loginpage_img.jpeg') no-repeat center center/cover;
-  margin-left:00px;
-  margin-right: 30px; /* Adds space between image and form */
-}
-
-.login-box {
-  background-color: #ffffff;
-  padding: 40px;
-  width: 100%;
-  max-width: 400px;
-  
-  
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.login-box h2 {
-  margin-bottom: 10px;
-  color: #212529;
-  font-weight: bold;
-}
-
-.login-box p {
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.form-group {
-  text-align: left;
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  outline: none;
-  transition: border 0.3s;
-}
-
-.form-group input:focus {
-  border-color: #646cff;
-}
-
-.btn-login {
-  background-color: #d9534f;
-  color: #fff;
-  border: none;
-  width: 100%;
-  padding: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 15px;
-  transition: background 0.3s;
-}
-
-.btn-login:hover {
-  background-color: #c9302c;
-}
-
-.google-signup {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  color: #212529;
-  width: 100%;
-  padding: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background 0.3s;
-}
-
-.google-signup:hover {
-  background-color: #f1f1f1;
-}
-
-.extra-links {
-  margin-top: 15px;
-}
-
-.extra-links a {
-  color: #646cff;
-  text-decoration: none;
-}
-
-.extra-links a:hover {
-  text-decoration: underline;
-}
-
-/* ============================= */
-/* Responsive Design for Login Page */
-/* ============================= */
-@media (max-width: 1024px) {
-  .login-container {
-    flex-direction: column;
-  }
-
-  .login-image {
-    width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
-  }
-
-  .login-box {
-    max-width: 100%;
   }
 }

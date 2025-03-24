@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import './Signup.css';
 import loginImage from '../assets/loginpage_img.jpeg'; // Import the image
 
 function Signup() {

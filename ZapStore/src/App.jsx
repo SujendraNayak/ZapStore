@@ -5,26 +5,26 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
+import Signup from './components/Signup';
 
 import './App.css';
-import Signup from './components/Signup';
 
 function App() {
   return (
     <Router>
-      <div id="root">
+      <div className="app-container">
         <Navbar />
-        <div className="main-content">
+        <main className="main-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/Contact" element={<div>Contact</div>} />
-            <Route path="/About" element={<div>About Page</div>} />
+            <Route path="/contact" element={<div>Contact Page</div>} />
+            <Route path="/about" element={<div>About Page</div>} />
             <Route path="/sign-up" element={<Signup />} />
-            <Route path="/login" element={<Login/>} />
+            <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/cart" element= {<div>hii</div>}/>
+            <Route path="/cart" element={<div>Cart Page</div>} />
           </Routes>
-        </div>
+        </main>
         <Footer />
       </div>
     </Router>
