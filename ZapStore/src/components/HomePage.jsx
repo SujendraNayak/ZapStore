@@ -1,5 +1,8 @@
 import React from 'react';
 import './HomePage.css';
+import iphoneImage from '../assets/iphone.jpeg';  // ✅ iPhone image
+import gamepadImage from '../assets/play_s.png'; 
+import keyboradImage from '../assets/Keyboard.png'; // ✅ Gamepad image
 
 const HomePage = () => {
   return (
@@ -21,7 +24,12 @@ const HomePage = () => {
       <div className="main-content">
         {/* Hero Section */}
         <section className="hero">
-          <img src="https://via.placeholder.com/900x300" alt="Promo Banner" />
+          <div className="black-box">
+            <h2>iPhone 15 Series</h2>  
+            <h2>Up to 10% off Voucher</h2>
+            <p>Shop Now →</p>
+          </div>
+          <img src={iphoneImage} alt="iPhone Promo" className="iphone-img" />
         </section>
 
         {/* Flash Sales Section */}
@@ -30,15 +38,18 @@ const HomePage = () => {
           <div className="countdown">⏳ 03:23:19:56</div>
 
           <div className="product-grid">
+            {/* ✅ FIXED Gamepad Image */}
+
+            
             <div className="product-card">
-              <img src="https://via.placeholder.com/150" alt="Gamepad" />
+              <img src={gamepadImage} alt="Gamepad" />
               <h3>HAVIT HV-G92 Gamepad</h3>
               <p><span className="old-price">$120</span> <span className="new-price">$80</span></p>
               <button>Add to Cart</button>
             </div>
 
             <div className="product-card">
-              <img src="https://via.placeholder.com/150" alt="Keyboard" />
+              <img src={keyboradImage} alt="Keyboard" />
               <h3>AK-900 Wired Keyboard</h3>
               <p><span className="old-price">$120</span> <span className="new-price">$90</span></p>
               <button>Add to Cart</button>
