@@ -1,0 +1,93 @@
+.wishlist-container {
+    padding: 30px;
+    margin-top: 20px;
+  }
+ 
+
+  .wishlist-items,
+  .recommended-items {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .wishlist-card {
+    background: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 220px;
+    text-align: center;
+    position: relative;
+    margin-left: 50px;
+  }
+  
+  .wishlist-card img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .wishlist-card .discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    padding: 3px 6px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  
+  .wishlist-card h3 {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  
+  .old-price {
+    text-decoration: line-through;
+    color: red;
+    font-size: 14px;
+  }
+  
+  .new-price {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .rating {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .add-to-cart {
+    background: black;
+    color: white;
+    border: none;
+    padding: 8px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .remove-item {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .see-all {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+

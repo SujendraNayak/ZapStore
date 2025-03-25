@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
 import Signup from './components/Signup';
+import Wishlist from './components/Wishlist';
 
 import './App.css';
 
@@ -23,6 +24,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/cart" element={<div>Cart Page</div>} />
+            <Route path="/wishlist" element={<Wishlist/>}/>
           </Routes>
         </main>
         <Footer />
