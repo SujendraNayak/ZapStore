@@ -21,7 +21,7 @@
   text-align: center;
   position: relative;
   gap: 20px;
-  min-height: 20px;
+  min-height: 2px;
 }
 
 .product-card img {
