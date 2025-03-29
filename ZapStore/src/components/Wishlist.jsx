@@ -1,7 +1,5 @@
 import React from "react";
 import "./Wishlist.css";
-
-// ✅ Using only keyboard image for all products
 import keyboardImage from "../assets/keyboard.png";
 
 const Wishlist = () => {
@@ -9,67 +7,39 @@ const Wishlist = () => {
     <div className="wishlist-container">
       <h2>Wishlist (4)</h2>
       <div className="wishlist-items">
-        <div className="product-card">
-          <img src={keyboardImage} alt="Keyboard" />
-          <h3>AK-900 Wired Keyboard</h3>
-          <p><span className="new-price">$200</span></p>
-          <button>Add to Cart</button>
-        </div>
-
-        <div className="product-card">
-          <img src={keyboardImage} alt="Keyboard" />
-          <h3>RGB Liquid CPU Cooler</h3>
-          <p><span className="new-price">$1960</span></p>
-          <button>Add to Cart</button>
-        </div>
-
-        <div className="product-card">
-          <img src={keyboardImage} alt="Keyboard" />
-          <h3>GP11 Shooter USB Gamepad</h3>
-          <p><span className="new-price">$550</span></p>
-          <button>Add to Cart</button>
-        </div>
-
-        <div className="product-card">
-          <img src={keyboardImage} alt="Keyboard" />
-          <h3>Quilted Satin Jacket</h3>
-          <p><span className="new-price">$750</span></p>
-          <button>Add to Cart</button>
-        </div>
+        {[
+          { name: "AK-900 Wired Keyboard", price: "$200" },
+          { name: "RGB Liquid CPU Cooler", price: "$1960" },
+          { name: "GP11 Shooter USB Gamepad", price: "$550" },
+          { name: "Quilted Satin Jacket", price: "$750" },
+        ].map((item, index) => (
+          <div className="wishlist-card" key={index}>
+            <img src={keyboardImage} alt={item.name} />
+            <h3>{item.name}</h3>
+            <p><span className="wishlist-price">{item.price}</span></p>
+            <button className="wishlist-btn">Add to Cart</button>
+          </div>
+        ))}
       </div>
-
+      
       <h2>Just For You</h2>
       <div className="recommended-items">
-        <div className="product-card">
-          <img src={keyboardImage} alt="Keyboard" />
-          <h3>ASUS FHD Gaming Laptop</h3>
-          <p><span className="new-price">$960</span></p>
-          <button>Add to Cart</button>
-        </div>
-
-        <div className="product-card">
-          <img src={keyboardImage} alt="Keyboard" />
-          <h3>IPS LCD Gaming Monitor</h3>
-          <p><span className="new-price">$1160</span></p>
-          <button>Add to Cart</button>
-        </div>
-
-        <div className="product-card">
-          <img src={keyboardImage} alt="Keyboard" />
-          <h3>HAVIT HV-G92 Gamepad</h3>
-          <p><span className="new-price">$560</span></p>
-          <button>Add to Cart</button>
-        </div>
-
-        <div className="product-card">
-          <img src={keyboardImage} alt="Keyboard" />
-          <h3>AK-900 Wired Keyboard</h3>
-          <p><span className="new-price">$200</span></p>
-          <button>Add to Cart</button>
-        </div>
+        {[
+          { name: "ASUS FHD Gaming Laptop", price: "$960" },
+          { name: "IPS LCD Gaming Monitor", price: "$1160" },
+          { name: "HAVIT HV-G92 Gamepad", price: "$560" },
+          { name: "AK-900 Wired Keyboard", price: "$200" },
+        ].map((item, index) => (
+          <div className="wishlist-card" key={index}>
+            <img src={keyboardImage} alt={item.name} />
+            <h3>{item.name}</h3>
+            <p><span className="wishlist-price">{item.price}</span></p>
+            <button className="wishlist-btn">Add to Cart</button>
+          </div>
+        ))}
       </div>
 
-      <button className="see-all">See All</button>
+      <button className="see-all-btn">See All</button>
     </div>
   );
 };

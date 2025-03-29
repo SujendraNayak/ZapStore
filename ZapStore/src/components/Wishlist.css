@@ -1,84 +1,63 @@
-/* Cart Container */
-.cart-container {
+.wishlist-container {
   width: 80%;
   margin: 50px auto;
   font-family: Arial, sans-serif;
 }
 
-/* Cart Actions (Return to Shop + Apply Coupon) */
-.cart-actions {
+.wishlist-items, .recommended-items {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
 }
 
-/* Coupon Section */
-.coupon-container {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.coupon-container input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  width: 200px;
-  border-radius: 5px;
-}
-
-.apply-coupon {
-  padding: 10px 15px;
-  background: #d9534f;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.apply-coupon:hover {
-  background: #c9302c;
-}
-
-/* Cart Summary (Align Right) */
-.cart-summary {
-  display: flex;
-  justify-content: flex-end; /* Push to right */
-  margin-top: 20px;
-}
-
-/* Cart Total Box */
-.cart-total {
-  width: 250px;
+.wishlist-card {
+  width: 220px;
   border: 1px solid #ddd;
-  padding: 20px;
-  text-align: right;
-  background: #f9f9f9;
+  padding: 15px;
+  text-align: center;
+  background: #fff;
   border-radius: 5px;
 }
 
-.cart-total p {
-  margin: 10px 0;
-  font-size: 16px;
+.wishlist-card img {
+  width: 100px;
+  height: 100px;
 }
 
-.cart-total .total {
+.wishlist-price {
   font-weight: bold;
-  font-size: 18px;
+  color: #d9534f;
 }
 
-.checkout-btn {
+.wishlist-btn {
   width: 100%;
   background: #d9534f;
   color: white;
-  padding: 10px;
+  padding: 8px;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 10px;
   border-radius: 5px;
 }
 
-.checkout-btn:hover {
+.wishlist-btn:hover {
   background: #c9302c;
+}
+
+.see-all-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.see-all-btn:hover {
+  background: #555;
 }
