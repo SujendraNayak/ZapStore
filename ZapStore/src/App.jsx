@@ -26,6 +26,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/cart" element={<Cart/>} /> 
             <Route path="/wishlist" element={<Wishlist/>}/>
+            
           </Routes>
         </main>
         <Footer />

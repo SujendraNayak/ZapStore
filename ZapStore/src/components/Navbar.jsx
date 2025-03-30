@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { FaHeart, FaShoppingCart, FaUserCircle } from 'react-icons/fa'; // ✅ Import Icons
 import '../App.css';
-import { FaHeart, FaShoppingCart } from 'react-icons/fa'; // ✅ Import icons
 
 function Navbar() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -61,19 +61,28 @@ function Navbar() {
             </button>
           </form>
 
-          {/* ❤️ Heart Icon (Wishlist) */}
-          <Link to="/wishlist" className="btn btn-light me-2">
-            <FaHeart color="red" size={24} />
-          </Link>
+          {/* 🛒 Icons Section */}
+          <div className="d-flex align-items-center">
+            {/* ❤️ Wishlist Icon */}
+            <Link to="/wishlist" className="btn btn-light me-2">
+              <FaHeart color="red" size={24} />
+            </Link>
 
-          {/* 🛒 Cart Icon */}
-          <Link to="/cart" className="btn btn-light me-2">
-            <FaShoppingCart color="green" size={24} />
-          </Link>
+            {/* 🛒 Cart Icon */}
+            <Link to="/cart" className="btn btn-light me-2">
+              <FaShoppingCart color="green" size={24} />
+            </Link>
 
-          <Link className="btn btn-outline-success" to="/login">
-            Login
-          </Link>
+            {/* 👤 Account Icon */}
+            <Link to="/account" className="btn btn-light me-2">
+              <FaUserCircle color="blue" size={24} />
+            </Link>
+
+            {/* 🔑 Login Button */}
+            <Link className="btn btn-outline-success" to="/login">
+              Login
+            </Link>
+          </div>
         </div>
       </div>
     </nav>
