@@ -8,6 +8,7 @@ import Register from './components/Register';
 import Signup from './components/Signup';
 import Wishlist from './components/Wishlist';
 import Cart from './components/Cart';
+import Account from './components/Account';
 
 import './App.css';
 
@@ -26,7 +27,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/cart" element={<Cart/>} /> 
             <Route path="/wishlist" element={<Wishlist/>}/>
-            
+            <Route path="/account" element={<Account/>}/>
           </Routes>
         </main>
         <Footer />
