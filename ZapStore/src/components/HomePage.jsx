@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './HomePage.css';
-import iphoneImage from '../assets/iphone.jpeg';  // ✅ iPhone image
+import { CartContext } from '../context/CartContext'; 
+
+
+import iphoneImage from '../assets/iphone.jpeg';  
 import gamepadImage from '../assets/play_s.png'; 
-import keyboradImage from '../assets/Keyboard.png'; // ✅ Gamepad image
+import keyboradImage from '../assets/Keyboard.png'; 
 
 const HomePage = () => {
+  const { addToCart } = useContext(CartContext);  // Get addToCart from context
+
+  const products = [
+    { id: 1, name: "HAVIT HV-G92 Gamepad", price: 80, image: gamepadImage },
+    { id: 2, name: "AK-900 Wired Keyboard", price: 90, image: keyboradImage },
+    { id: 3, name: "IPS LCD Gaming Monitor", price: 370, image: "https://via.placeholder.com/150" },
+    { id: 4, name: "S-Series Comfort Chair", price: 375, image: "https://via.placeholder.com/150" },
+  ];
+
+  const handleAddToCart = (product) => {
+    addToCart(product);  // Add the selected product to the cart
+  };
+
   return (
     <div className="home-container">
-      {/* Sidebar */}
       <aside className="sidebar">
         <h3>Categories</h3>
         <ul>
@@ -20,9 +35,7 @@ const HomePage = () => {
         </ul>
       </aside>
 
-      {/* Main Content */}
       <div className="main-content">
-        {/* Hero Section */}
         <section className="hero">
           <div className="black-box">
             <h2>iPhone 15 Series</h2>  
@@ -32,42 +45,19 @@ const HomePage = () => {
           <img src={iphoneImage} alt="iPhone Promo" className="iphone-img" />
         </section>
 
-        {/* Flash Sales Section */}
         <section className="flash-sales">
           <h2>🔥 Flash Sales</h2>
           <div className="countdown">⏳ 03:23:19:56</div>
 
           <div className="product-grid">
-            {/* ✅ FIXED Gamepad Image */}
-
-            
-            <div className="product-card">
-              <img src={gamepadImage} alt="Gamepad" />
-              <h3>HAVIT HV-G92 Gamepad</h3>
-              <p><span className="old-price">$120</span> <span className="new-price">$80</span></p>
-              <button>Add to Cart</button>
-            </div>
-
-            <div className="product-card">
-              <img src={keyboradImage} alt="Keyboard" />
-              <h3>AK-900 Wired Keyboard</h3>
-              <p><span className="old-price">$120</span> <span className="new-price">$90</span></p>
-              <button>Add to Cart</button>
-            </div>
-
-            <div className="product-card">
-              <img src="https://via.placeholder.com/150" alt="Monitor" />
-              <h3>IPS LCD Gaming Monitor</h3>
-              <p><span className="old-price">$400</span> <span className="new-price">$370</span></p>
-              <button>Add to Cart</button>
-            </div>
-
-            <div className="product-card">
-              <img src="https://via.placeholder.com/150" alt="Chair" />
-              <h3>S-Series Comfort Chair</h3>
-              <p><span className="old-price">$400</span> <span className="new-price">$375</span></p>
-              <button>Add to Cart</button>
-            </div>
+            {products.map((product) => (
+              <div className="product-card" key={product.id}>
+                <img src={product.image} alt={product.name} />
+                <h3>{product.name}</h3>
+                <p><span className="old-price">$120</span> <span className="new-price">${product.price}</span></p>
+                <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+              </div>
+            ))}
           </div>
 
           <button className="view-all">View All Products</button>

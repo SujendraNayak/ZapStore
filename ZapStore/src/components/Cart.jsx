@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Cart.css";
-import keyboardImage from "../assets/keyboard.png"; // Using keyboard image for all products
+import { CartContext } from "../context/CartContext";  // ✅ Correct Import
+// Import CartContext
 
 const Cart = () => {
+  const { cartItems } = useContext(CartContext);  // Access cartItems from context
+
+  // Calculate total price
+  const subtotal = cartItems.reduce((total, item) => total + item.price, 0);
+
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
@@ -11,48 +17,30 @@ const Cart = () => {
           <tr>
             <th>Product</th>
             <th>Price</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="cart-item">
-              <img src={keyboardImage} alt="Product" className="cart-image" />
-              <span>LCD Monitor</span>
-            </td>
-            <td>$650</td>
-            <td><input type="number" value="1" min="1" /></td>
-            <td>$650</td>
-          </tr>
-
-          <tr>
-            <td className="cart-item">
-              <img src={keyboardImage} alt="Product" className="cart-image" />
-              <span>H1 Gamepad</span>
-            </td>
-            <td>$560</td>
-            <td><input type="number" value="2" min="1" /></td>
-            <td>$1120</td>
-          </tr>
+          {cartItems.length === 0 ? (
+            <tr>
+              <td colSpan="2">Your cart is empty</td>
+            </tr>
+          ) : (
+            cartItems.map((item, index) => (
+              <tr key={index}>
+                <td className="cart-item">
+                  <img src={item.image} alt={item.name} className="cart-image" />
+                  <span>{item.name}</span>
+                </td>
+                <td>${item.price}</td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
 
-      <div className="cart-actions">
-        <button className="return-shop">Return to Shop</button>
-        <div className="coupon-container">
-          <input type="text" placeholder="Enter Coupon Code" />
-          <button className="apply-coupon">Apply Coupon</button>
-        </div>
-      </div>
-
       <div className="cart-summary">
-        <div className="cart-total">
-          <p>Subtotal: <span>$1750</span></p>
-          <p>Shipping: <span>Free</span></p>
-          <p className="total">Total: <span>$1750</span></p>
-          <button className="checkout-btn">Proceed to Checkout</button>
-        </div>
+        <p>Subtotal: <span>${subtotal}</span></p>
+        <button className="checkout-btn">Proceed to Checkout</button>
       </div>
     </div>
   );
