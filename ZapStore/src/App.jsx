@@ -9,6 +9,7 @@ import Signup from './components/Signup';
 import Wishlist from './components/Wishlist';
 import Cart from './components/Cart';
 import Account from './components/Account';
+import Contact from './components/Contact';
 
 import './App.css';
 
@@ -20,7 +21,7 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/contact" element={<div>Contact Page</div>} />
+            <Route path="/contact" element={<Contact/>} />
             <Route path="/about" element={<div>About Page</div>} />
             <Route path="/sign-up" element={<Signup />} />
             <Route path="/login" element={<Login />} />
