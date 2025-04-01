@@ -1,57 +1,77 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from "react";
+import "./Account.css";
 
-function Account() {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [error, setError] = useState("");
-    const navigate = useNavigate();
+const MyAccount = () => {
+  return (
+    <div className="account-container">
+      {/* Sidebar */}
+      <div className="sidebar">
+        <h3>Manage My Account</h3>
+        <ul>
+          <li className="active">My Profile</li>
+          <li>Address Book</li>
+          <li>My Payment Options</li>
+        </ul>
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (password !== confirmPassword) {
-            setError("Passwords do not match");
-        } else {
-            console.log({ username, password, email });
-            navigate("/login");
-        }
-    };
+        <h3>My Orders</h3>
+        <ul>
+          <li>My Returns</li>
+          <li>My Cancellations</li>
+        </ul>
 
-    return (
-        <div className="container">
-            <form onSubmit={handleSubmit}>
-                {error && <p style={{ color: "red" }}>{error}</p>}
-                <input 
-                    type="text" 
-                    placeholder="Username" 
-                    value={username} 
-                    onChange={(e) => setUsername(e.target.value)} 
-                />
-                <input 
-                    type="email" 
-                    placeholder="Email" 
-                    value={email} 
-                    onChange={(e) => setEmail(e.target.value)} 
-                />
-                <input 
-                    type="password" 
-                    placeholder="Password" 
-                    value={password} 
-                    onChange={(e) => setPassword(e.target.value)} 
-                />
-                <input 
-                    type="password" 
-                    placeholder="Confirm Password" 
-                    value={confirmPassword} 
-                    onChange={(e) => setConfirmPassword(e.target.value)} 
-                />
-                <button type="submit">Sign Up</button>
-            </form>
-            <p>Already have an account? <Link to="/login">Login</Link></p>
-        </div>
-    );
-}
+        <h3>My Wishlist</h3>
+      </div>
 
-export default Account;
+      {/* Right side content */}
+      <div className="account-content">
+        <h2>Edit Your Profile</h2>
+        <form>
+          <div className="form-row">
+            <div className="input-group">
+              <label>First Name</label>
+              <input type="text" value="Md" disabled />
+            </div>
+
+            <div className="input-group">
+              <label>Last Name</label>
+              <input type="text" value="Rimel" disabled />
+            </div>
+          </div>
+
+          <div className="input-group">
+            <label>Email</label>
+            <input type="email" value="rimellll@gmail.com" disabled />
+          </div>
+
+          <div className="input-group">
+            <label>Address</label>
+            <input type="text" value="Kingston, 5236, United State" disabled />
+          </div>
+
+          <h3>Password Changes</h3>
+          <div className="input-group">
+            <label>Current Password</label>
+            <input type="password" />
+          </div>
+
+          <div className="input-group">
+            <label>New Password</label>
+            <input type="password" />
+          </div>
+
+          <div className="input-group">
+            <label>Confirm New Password</label>
+            <input type="password" />
+          </div>
+
+          <div className="button-group">
+            <button type="button" className="cancel-btn">Cancel</button>
+            <button type="submit" className="save-btn">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default MyAccount;
