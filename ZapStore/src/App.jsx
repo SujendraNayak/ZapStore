@@ -11,29 +11,32 @@ import Cart from './components/Cart';
 import Account from './components/Account';
 import Contact from './components/Contact';
 import './App.css';
-import { CartProvider } from './context/CartContext';  // Import CartProvider
+import { CartProvider } from './context/CartContext';  
+import { WishlistProvider } from './context/WishlistContext';  // ✅ Import WishlistProvider
 
 function App() {
   return (
     <Router>
       <CartProvider>
-        <div className="app-container">
-          <Navbar />
-          <main className="main-content">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/about" element={<div>About Page</div>} />
-              <Route path="/sign-up" element={<Signup />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/wishlist" element={<Wishlist />} />
-              <Route path="/account" element={<Account />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
+        <WishlistProvider> {/* ✅ Wrap everything with WishlistProvider */}
+          <div className="app-container">
+            <Navbar />
+            <main className="main-content">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/about" element={<div>About Page</div>} />
+                <Route path="/sign-up" element={<Signup />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/wishlist" element={<Wishlist />} />
+                <Route path="/account" element={<Account />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </WishlistProvider>
       </CartProvider>
     </Router>
   );

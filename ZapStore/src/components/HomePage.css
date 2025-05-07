@@ -118,3 +118,7 @@ button {
   background: #333;
   color: white;
 }
+.wishlist-icon {
+  margin-left: 20px;
+  font-size: 24px; /* Increase size */
+}

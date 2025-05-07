@@ -1,14 +1,16 @@
 import React, { useContext } from 'react';
 import './HomePage.css';
-import { CartContext } from '../context/CartContext'; 
-
+import { CartContext } from '../context/CartContext';  
+import { WishlistContext } from '../context/WishlistContext';  
+import { FaHeart } from 'react-icons/fa';  
 
 import iphoneImage from '../assets/iphone.jpeg';  
 import gamepadImage from '../assets/play_s.png'; 
 import keyboradImage from '../assets/Keyboard.png'; 
 
 const HomePage = () => {
-  const { addToCart } = useContext(CartContext);  // Get addToCart from context
+  const { addToCart } = useContext(CartContext);  
+  const { wishlist, addToWishlist, removeFromWishlist } = useContext(WishlistContext);
 
   const products = [
     { id: 1, name: "HAVIT HV-G92 Gamepad", price: 80, image: gamepadImage },
@@ -18,7 +20,11 @@ const HomePage = () => {
   ];
 
   const handleAddToCart = (product) => {
-    addToCart(product);  // Add the selected product to the cart
+    addToCart(product);
+  };
+
+  const toggleWishlist = (product) => {
+    wishlist.some((item) => item.id === product.id) ? removeFromWishlist(product.id) : addToWishlist(product);
   };
 
   return (
@@ -54,8 +60,18 @@ const HomePage = () => {
               <div className="product-card" key={product.id}>
                 <img src={product.image} alt={product.name} />
                 <h3>{product.name}</h3>
-                <p><span className="old-price">$120</span> <span className="new-price">${product.price}</span></p>
-                <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+                <p>
+                  <span className="old-price">$120</span> 
+                  <span className="new-price">${product.price}</span>
+                </p>
+                <div className="buttons">
+                  <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+                  <FaHeart 
+                    className="wishlist-icon" 
+                    color={wishlist.some((item) => item.id === product.id) ? "red" : "gray"} 
+                    onClick={() => toggleWishlist(product)}
+                  />
+                </div>
               </div>
             ))}
           </div>
